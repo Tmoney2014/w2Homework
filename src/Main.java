@@ -5,8 +5,8 @@ class Bus {
     int totalPassenger =0;
     int intake = 0;
     int busNum;
-    int gas;
-    int speed;
+    int gas =0;
+    int speed =0;
     String working;
     String notWorking;
 
@@ -14,12 +14,12 @@ class Bus {
         this.busNum = num;
     }
 
-    public gas(int gas){
+    public void Gas(int gas){
         this.gas = gas;
 
     }
 
-    public speed(int speed){
+    public void Speed(int speed){
         this.speed = speed;
 
     }
@@ -29,30 +29,34 @@ class Bus {
         this.intake+= 1500;
     }
 
-    public state(String working){
+    public void state(String working){
         this.working = working;
     }
 
     public int getBusNum(){
-        return busNum
+        return busNum;
     }
     public int getTotalPassenger(){
-        return totalPassenger
+        return totalPassenger;
     }
+    public int getMaxPassenger(){
+        return maxPassenger;
+    }
+
     public int getGas(){
-        return gas
+        return gas;
     }
 
     public int getIntake(){
-        return intake
+        return intake;
     }
 
-    public int getMaxPassenger(){
-        return maxPassenger
-    }
+//    public int getMaxPassenger(){
+//        return maxPassenger;
+//    }
 
     public int getSpeed(){
-        return speed
+        return speed;
     }
 
     public void showInfo(){
@@ -70,6 +74,8 @@ class passinger {
 public class Main {
     public static void main(String[] args) {
 
+        Bus bus115=new Bus(115);
+        bus115.showInfo();
 
 
     }
