@@ -1,5 +1,3 @@
-//package springHomework;
-//import java.util.UUID; //UUIT는 고유값을 생성
 class Bus {
     int maxPassenger;
     int totalPassenger;
@@ -10,8 +8,8 @@ class Bus {
     String state;
 
 
-    public Bus(int Num, int gas, int speed, int totalPassenger, int maxPassenger, String state) {
-        this.busNum = Num;
+    public Bus(int busNum, int gas, int speed, int totalPassenger, int maxPassenger, String state) {
+        this.busNum = busNum;
         this.gas = gas;
         this.speed = speed;
         this.totalPassenger = totalPassenger;
@@ -19,30 +17,33 @@ class Bus {
         this.maxPassenger = maxPassenger;
 
 
-
     }
+
     public int getBusNum() {
         return busNum;
     }
 
     public int getTotalPassenger() {
+        if (totalPassenger > maxPassenger) {
+            System.out.println("자리가 없습니다");
+        }
         return totalPassenger;
     }
-
-    public void setNowPassenger(int addition) {
-        this.totalPassenger = getTotalPassenger() + addition;
-    }
-
+//
+//    public void setNowPassenger(int addition) {
+//        this.totalPassenger = getTotalPassenger() + addition;
+//    }
+//
     public int getMaxPassenger() {
         return maxPassenger;
     }
-
-    public void setMaxPassenger(int maxPassenger) {
-        this.maxPassenger = maxPassenger;
-    }
+//
+//    public void setMaxPassenger(int maxPassenger) {
+//        this.maxPassenger = maxPassenger;
+//    }
 
     public int getIntake() {
-        intake += totalPassenger*1000;
+        intake += totalPassenger * 1000;
         return intake;
     }
 
@@ -50,43 +51,47 @@ class Bus {
         if (gas < 10) {
             state = "차고지행";
             System.out.println("기름을 확인해주세요");
-        }else { state = "운행";}
+        } else {
+            state = "운행";
+        }
 
         return state;
     }
 
-    public void setState() { this.state = state; }
+//    public void setState() {
+//        this.state = state;
+//    }
+
     public int getGas() {
         return gas;
     }
-
-    public void setGas(int gas) {
-        this.gas = gas;
-    }
-
+//
+//    public void setGas(int gas) {
+//        this.gas = gas;
+//    }
+//
     public int getSpeed() {
         return speed;
     }
 
-    public void setSpeed(int addition) {
-        this.speed = getSpeed() + addition;
-    }
+//    public void setSpeed(int addition) {
+//        this.speed = getSpeed() + addition;
+//    }
 
-    public void showInfo(){
-        System.out.println("버스"+this.getBusNum()+"\n"+"탑승객"+this.getTotalPassenger()+"최대탑승객"+this.getMaxPassenger()+"현제속도"+this.getSpeed()+"기름"+this.getGas()+"총수익"+this.getIntake()+this.getState());
+    public void showInfo() {
+        System.out.println("버스" +getBusNum() + "\n" + "탑승객" + getTotalPassenger() + "최대탑승객" + getMaxPassenger() + "현제속도" + getSpeed() + "기름" + getGas() + "총수익" + getIntake() + getState());
     }
 }
 
-
-//package springHomework;
 public class Main {
     public static void main(String[] args) {
 
-        Bus bus115 = new Bus(115, 50,50,2,30,"운행");
+        Bus bus115 = new Bus(115, 50, 50, 30, 30, "운행");
         bus115.showInfo();
 
     }
 }
+
 
 //1. **아래의 정보를 가지는 ‘Bus’ 클래스 모델링**
 //        - 포함해야 할 정보

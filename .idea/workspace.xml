@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69e4f59d-311a-4f06-a3b5-3e48cdfe0709" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Taxi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -38,6 +39,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/kth12/Documents/2주차SPRING과제/w2Homework",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
@@ -65,7 +67,7 @@
       <updated>1656465754404</updated>
       <workItem from="1656465756231" duration="14035000" />
       <workItem from="1656496295572" duration="4620000" />
-      <workItem from="1656545895271" duration="9424000" />
+      <workItem from="1656545895271" duration="18965000" />
     </task>
     <servers />
   </component>
