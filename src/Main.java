@@ -7,15 +7,15 @@ class Bus {
     int busNum;
     int gas;
     int speed;
-    String working;
-    String notWorking;
+    String state;
 
-    public Bus(int Num, int gas, int speed, int totalPassenger, int maxPassenger, String working, int intake) {
+
+    public Bus(int Num, int gas, int speed, int totalPassenger, int maxPassenger, String state) {
         this.busNum = Num;
         this.gas = gas;
-        this.speed = 0;
-        this.totalPassenger = 0;
-        this.working = working;
+        this.speed = speed;
+        this.totalPassenger = totalPassenger;
+        this.state = state;
         this.maxPassenger = maxPassenger;
 
 
@@ -42,18 +42,20 @@ class Bus {
     }
 
     public int getIntake() {
+        intake += totalPassenger*1000;
         return intake;
     }
 
-    public void setIntake(int intake) {
-        this.intake = intake;
+    public String getState() {
+        if (gas < 10) {
+            state = "차고지행";
+            System.out.println("기름을 확인해주세요");
+        }else { state = "운행";}
+
+        return state;
     }
 
-    public String getWorking() {
-        return working;
-    }
-
-    public void setWorking(String working) { this.working = working; }
+    public void setState() { this.state = state; }
     public int getGas() {
         return gas;
     }
@@ -71,7 +73,7 @@ class Bus {
     }
 
     public void showInfo(){
-        System.out.println("버스"+this.getBusNum()+"\n"+"탑승객"+this.getTotalPassenger()+"최대탑승객"+this.getMaxPassenger()+"현제속도"+this.getSpeed()+"기름"+this.getGas()+"총수익"+this.getIntake());
+        System.out.println("버스"+this.getBusNum()+"\n"+"탑승객"+this.getTotalPassenger()+"최대탑승객"+this.getMaxPassenger()+"현제속도"+this.getSpeed()+"기름"+this.getGas()+"총수익"+this.getIntake()+this.getState());
     }
 }
 
@@ -80,9 +82,8 @@ class Bus {
 public class Main {
     public static void main(String[] args) {
 
-        Bus bus115 = new Bus(115,30,40, 1, 30,"운행",0);
+        Bus bus115 = new Bus(115, 50,50,2,30,"운행");
         bus115.showInfo();
-
 
     }
 }
@@ -120,3 +121,6 @@ public class Main {
 //        - 주유량을 확인해 주세요.
 //        - print문으로 출력
 //        - 변경할 속도를 입력 받아 현재 속도에 추가 하거나 뺄 수 있어야 합니다.
+
+
+
