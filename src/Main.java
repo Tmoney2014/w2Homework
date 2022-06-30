@@ -1,80 +1,86 @@
 //package springHomework;
-
+//import java.util.UUID; //UUIT는 고유값을 생성
 class Bus {
-    int maxPassenger = 30;
-    int totalPassenger =0;
-    int intake = 0;
+    int maxPassenger;
+    int totalPassenger;
+    int intake;
     int busNum;
-    int gas =0;
-    int speed =0;
+    int gas;
+    int speed;
     String working;
     String notWorking;
 
-    public Bus(int num) {
-        this.busNum = num;
-    }
-
-    public void Gas(int gas){
+    public Bus(int Num, int gas, int speed, int totalPassenger, int maxPassenger, String working, int intake) {
+        this.busNum = Num;
         this.gas = gas;
-
-    }
-
-    public void Speed(int speed){
-        this.speed = speed;
-
-    }
-
-    public void passenger(int totalPassenger) {
-        this.totalPassenger++;
-        this.intake+= 1500;
-    }
-
-    public void state(String working){
+        this.speed = 0;
+        this.totalPassenger = 0;
         this.working = working;
-    }
+        this.maxPassenger = maxPassenger;
 
-    public int getBusNum(){
+
+
+    }
+    public int getBusNum() {
         return busNum;
     }
-    public int getTotalPassenger(){
+
+    public int getTotalPassenger() {
         return totalPassenger;
     }
-    public int getMaxPassenger(){
+
+    public void setNowPassenger(int addition) {
+        this.totalPassenger = getTotalPassenger() + addition;
+    }
+
+    public int getMaxPassenger() {
         return maxPassenger;
     }
 
-    public int getGas(){
-        return gas;
+    public void setMaxPassenger(int maxPassenger) {
+        this.maxPassenger = maxPassenger;
     }
 
-    public int getIntake(){
+    public int getIntake() {
         return intake;
     }
 
-//    public int getMaxPassenger(){
-//        return maxPassenger;
-//    }
+    public void setIntake(int intake) {
+        this.intake = intake;
+    }
 
-    public int getSpeed(){
+    public String getWorking() {
+        return working;
+    }
+
+    public void setWorking(String working) { this.working = working; }
+    public int getGas() {
+        return gas;
+    }
+
+    public void setGas(int gas) {
+        this.gas = gas;
+    }
+
+    public int getSpeed() {
         return speed;
     }
 
+    public void setSpeed(int addition) {
+        this.speed = getSpeed() + addition;
+    }
+
     public void showInfo(){
-        System.out.println("Bus"+this.getBusNum()+"got"+this.getTotalPassenger()+"passengers"+"of"+this.getMaxPassenger()+"speed"+this.getSpeed()+"gas"+this.getGas()+"total income"+this.getIntake());
+        System.out.println("버스"+this.getBusNum()+"\n"+"탑승객"+this.getTotalPassenger()+"최대탑승객"+this.getMaxPassenger()+"현제속도"+this.getSpeed()+"기름"+this.getGas()+"총수익"+this.getIntake());
     }
 }
 
-class passinger {
-
-
-
-}
 
 //package springHomework;
 public class Main {
     public static void main(String[] args) {
 
-        Bus bus115=new Bus(115);
+        Bus bus115 = new Bus(115,30,40, 1, 30,"운행",0);
         bus115.showInfo();
 
 
